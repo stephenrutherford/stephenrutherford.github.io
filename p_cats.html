@@ -63,11 +63,11 @@
 							<h2>Web Scraping</h2>
 							<p>The website used for this project was adoptapet.com and a random location in the California area. They have a good selection of different datapoints that can be extracted.</p>
 							<p>This is the main results page for each individual cat. We mostly want to grab the URL for each cat but we can also get the cats name as well.</p>
-							<img src="images/p_cats/website_search_results.png"/>
+							<img src="images/p_cats/website_search_results.PNG"/>
 							<p>Clicking on each cat will get us more details under the "Facts About Me" section. We will run a scrape on this container as well.</p>
-							<img src="images/p_cats/website_cat_details.png"/>
+							<img src="images/p_cats/website_cat_details.PNG"/>
 							<p>I opted to set up the database manually in pgAdmin with the Columns that we will be using.</p>
-							<img src="images/p_cats/db_empty.png"/>
+							<img src="images/p_cats/db_empty.PNG"/>
 							<b><p>scrape1.py</p></b>
 							<p>For our imports, Selenium will be the main driver for scraping dynamic javascript. The PostgreSQL will be handled via Psycopg2</p>
 							<pre><code>import requests
@@ -123,7 +123,7 @@ import time</code></pre>
 # close connection
 con.close()</code></pre>
 							<p>Here is our database with the updated cat name and URL Our next Python script will scrape the remaining details.</p>
-							<img src="images/p_cats/db_first_scape.png"/>
+							<img src="images/p_cats/db_first_scape.PNG"/>
 							<b><p>scrape2.py</p></b>
 							<p>Lets select all of the current data from the database.</p>
 							<pre><code>cur.execute("SELECT id, name, url FROM cats")
@@ -160,7 +160,7 @@ rows = cur.fetchall()</code></pre>
 	print("scraping ID:", r[0])
 	scrape_db(r[2])</code></pre>
 							<p>Our finished database! Some entries are null due to broken webpages, we'll fix this later in Jupyter Notebook using Pandas.</p>
-							<img src="images/p_cats/db_second_scrape.png"/>
+							<img src="images/p_cats/db_second_scrape.PNG"/>
 
 							<h2>Data Analysis</h2>
 							<p>Moving onto Jupyter Notebook, let's import our libraries.</p>
@@ -191,10 +191,10 @@ cnx = create_engine(postgres_str)</code></pre>
 							<pre><code>df = pd.read_sql_query("""SELECT * FROM cats WHERE breed IS NOT NULL LIMIT 420;""", cnx)</code></pre>
 							<p>Lets have a look at the distinct column values in our new dataframe.</p>
 							<pre><code>df.nunique()</code></pre>
-							<img src="images/p_cats/df_1.png"/>
+							<img src="images/p_cats/df_1.PNG"/>
 							<p>This is mostly okay, but I think we can clean up the data in our Age column and bring it down to two variables instead.</p>
 							<pre><code>df.age.value_counts()</code></pre>
-							<img src="images/p_cats/df_2.png"/>
+							<img src="images/p_cats/df_2.PNG"/>
 							<p>Firstly, replace all empty strings in our dataframe with NaN values. This will help with matplotlib coming up shortly. </p>
 							<pre><code>df = df.replace("", np.nan)</code></pre>
 							<p>Finally, replace the remainder Age strings into either "Young" or "Adult" variables</p>
@@ -204,7 +204,7 @@ df.age = df.age.replace("10 years old, Senior", "Adult")
 df.age = df.age.replace("Senior", "Adult")</code></pre>
 							<p>Looking much better now.</p>
 							<pre><code>df.age.value_counts()</code></pre>
-							<img src="images/p_cats/df_3.png"/>
+							<img src="images/p_cats/df_3.PNG"/>
 							<p>So what kind of cat breeds were we able to scrape? Lets plot the top 10 distinct breeds.</p>
 							<pre><code>fig1 = df.breed.value_counts()[:10].plot(kind="barh", figsize=(10,10))</code></pre>
 							<img src="images/p_cats/pd_fig_1.png"/>
@@ -212,18 +212,18 @@ df.age = df.age.replace("Senior", "Adult")</code></pre>
 							<pre><code>df2 = df.groupby(["breed", "sex"])["breed"].count().unstack("sex").fillna(0)</code></pre>
 							<p>We will also need to append a "Total" column to the new dataframe so we can sort and filter it.</p>
 							<pre><code>df2["Total"] = df2.sum(axis=1)</code></pre>
-							<img src="images/p_cats/df_4.png"/>
+							<img src="images/p_cats/df_4.PNG"/>
 							<p>Lets keep the top 10 breeds by the combined Male and Female values.</p>
 							<pre><code>df2 = df2.nlargest(10, "Total")</code></pre>
 							<p>We can also display this as a stached chart for better visual representation.</p>
 							<pre><code>fig2 = df2[["Female","Male"]].plot(kind="barh", stacked="True", figsize=(10,10))</code></pre>
 							<img src="images/p_cats/pd_fig_2.png"/>
 							<p>We have a nice stacked chart now, but why are there no male Calico cats available for adoption?</p>
-							<img src="images/p_cats/calico.png"/>
+							<img src="images/p_cats/calico.PNG"/>
 							<p>Cool, we learned a new cat fact today.</p>
 							<p>Instead of looking at gender, we can instead try the same breed analysis with color and hair type.</p>
 							<pre><code>df3 = df.groupby(['breed', 'color', "hair"])['breed'].count().unstack('color').fillna(0)</code></pre>
-							<img src="images/p_cats/df_5.png"/>
+							<img src="images/p_cats/df_5.PNG"/>
 							<p>We can plot this to a stacked chart as well.</p>
 							<pre><code>fig2 = df3.plot(kind="barh", stacked="True", figsize=(20,20))</code></pre>
 							<img src="images/p_cats/pd_fig_3.png"/>
