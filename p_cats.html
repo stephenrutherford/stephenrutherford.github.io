@@ -1,90 +1,133 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <!--
 	Phantom by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<title>Cats for Adoption: Web Scraping and Analysis</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/word_anim.css" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
-		<!-- Wrapper -->
-			<div id="wrapper">
+  <head>
+    <title>Cats for Adoption: Web Scraping and Analysis</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="assets/css/word_anim.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript
+      ><link rel="stylesheet" href="assets/css/noscript.css"
+    /></noscript>
+  </head>
+  <body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
+      <!-- Header -->
+      <header id="header">
+        <div class="inner">
+          <!-- Logo -->
+          <a href="index.html" class="logo">
+            <span class="symbol"><img src="images/boba_t.png" alt="" /></span
+            ><span class="title">Stephen Rutherford</span>
+          </a>
 
-				<!-- Header -->
-					<header id="header">
-						<div class="inner">
+          <!-- Nav -->
+          <nav>
+            <ul>
+              <li><a href="#menu">Menu</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
 
-							<!-- Logo -->
-								<a href="index.html" class="logo">
-									<span class="symbol"><img src="images/boba_t.png" alt="" /></span><span class="title">Stephen Rutherford</span>
-								</a>
+      <!-- Menu -->
+      <nav id="menu">
+        <h2>Menu</h2>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="p_domain.html">App: Fraud Domain Checker</a></li>
+          <li><a href="p_cats.html">Analysis: Web Scraping with Python</a></li>
+          <li><a href="generic.html">Project 3</a></li>
+          <li><a href="generic.html">Project 4</a></li>
+          <li><a href="generic.html">Project 5</a></li>
+          <li><a href="generic.html">Project 6</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
 
-							<!-- Nav -->
-								<nav>
-									<ul>
-										<li><a href="#menu">Menu</a></li>
-									</ul>
-								</nav>
-
-						</div>
-					</header>
-
-				<!-- Menu -->
-					<nav id="menu">
-						<h2>Menu</h2>
-						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li><a href="generic.html">Project 1</a></li>
-							<li><a href="generic.html">Project 2</a></li>
-							<li><a href="generic.html">Project 3</a></li>
-							<li><a href="generic.html">Project 4</a></li>
-							<li><a href="generic.html">Project 5</a></li>
-							<li><a href="generic.html">Project 6</a></li>
-							<li><a href="contact.html">Contact</a></li>
-						</ul>
-					</nav>
-
-				<!-- Main -->
-					<div id="main">
-						<div class="inner">
-							<h1>Cats for Adoption: Web Scraping and Analysis</h1>
-							<span class="image main"><img src="images/p_cats/banner.png" alt="" /></span>
-							<a href="https://github.com/stephenrutherford/Cats-for-Adoption-Web-Scraping-and-Analysis"><p><span class="image left"><img src="images/github.png" alt="" /></span>GitHub</p></a>
-							<a href="https://github.com/stephenrutherford/Cats-for-Adoption-Web-Scraping-and-Analysis/blob/master/anaylsis.ipynb"><p><span class="image left"><img src="images/internet.png" alt="" /></span>Jupyter Notebook</p></a>
-							<h2>Overview</h2>
-							<p>A data analysis of cats available for adoption using Python web scraping, PostgreSQL, and Pandas.</p>
-							<h2>Web Scraping</h2>
-							<p>The website used for this project was adoptapet.com and a random location in the California area. They have a good selection of different datapoints that can be extracted.</p>
-							<p>This is the main results page for each individual cat. We mostly want to grab the URL for each cat but we can also get the cats name as well.</p>
-							<img src="images/p_cats/website_search_results.PNG"/>
-							<p>Clicking on each cat will get us more details under the "Facts About Me" section. We will run a scrape on this container as well.</p>
-							<img src="images/p_cats/website_cat_details.PNG"/>
-							<p>I opted to set up the database manually in pgAdmin with the Columns that we will be using.</p>
-							<img src="images/p_cats/db_empty.PNG"/>
-							<b><p>scrape1.py</p></b>
-							<p>For our imports, Selenium will be the main driver for scraping dynamic javascript. The PostgreSQL will be handled via Psycopg2</p>
-							<pre><code>import requests
+      <!-- Main -->
+      <div id="main">
+        <div class="inner">
+          <h1>Cats for Adoption: Web Scraping and Analysis</h1>
+          <span class="image main"
+            ><img src="images/p_cats/banner.png" alt=""
+          /></span>
+          <a
+            href="https://github.com/stephenrutherford/Cats-for-Adoption-Web-Scraping-and-Analysis"
+            ><p>
+              <span class="image left"
+                ><img src="images/github.png" alt="" /></span
+              >GitHub
+            </p></a
+          >
+          <a
+            href="https://github.com/stephenrutherford/Cats-for-Adoption-Web-Scraping-and-Analysis/blob/master/anaylsis.ipynb"
+            ><p>
+              <span class="image left"
+                ><img src="images/internet.png" alt="" /></span
+              >Jupyter Notebook
+            </p></a
+          >
+          <h2>Overview</h2>
+          <p>
+            A data analysis of cats available for adoption using Python web
+            scraping, PostgreSQL, and Pandas.
+          </p>
+          <h2>Web Scraping</h2>
+          <p>
+            The website used for this project was adoptapet.com and a random
+            location in the California area. They have a good selection of
+            different datapoints that can be extracted.
+          </p>
+          <p>
+            This is the main results page for each individual cat. We mostly
+            want to grab the URL for each cat but we can also get the cats name
+            as well.
+          </p>
+          <img src="images/p_cats/website_search_results.PNG" />
+          <p>
+            Clicking on each cat will get us more details under the "Facts About
+            Me" section. We will run a scrape on this container as well.
+          </p>
+          <img src="images/p_cats/website_cat_details.PNG" />
+          <p>
+            I opted to set up the database manually in pgAdmin with the Columns
+            that we will be using.
+          </p>
+          <img src="images/p_cats/db_empty.PNG" />
+          <b><p>scrape1.py</p></b>
+          <p>
+            For our imports, Selenium will be the main driver for scraping
+            dynamic javascript. The PostgreSQL will be handled via Psycopg2
+          </p>
+          <pre><code>import requests
 from selenium import webdriver
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 import psycopg2
 import time</code></pre>
-							<p>First, we connect to our local database.</p>
-							<pre><code>con = psycopg2.connect(
+          <p>First, we connect to our local database.</p>
+          <pre><code>con = psycopg2.connect(
 	host =  "localhost",
 	database = "db_cats",
 	user = "username",
 	password = "password")</code></pre>
-							<p>Secondly, we will run this function to find the data container with the cat name and URL using the xpath location. We can then execute the SQL to insert the scraped content into our database.</p>
-							<pre><code>def scrape_page(url):
+          <p>
+            Secondly, we will run this function to find the data container with
+            the cat name and URL using the xpath location. We can then execute
+            the SQL to insert the scraped content into our database.
+          </p>
+          <pre><code>def scrape_page(url):
 	driver = webdriver.Chrome()
 	driver.get(url)
 
@@ -115,22 +158,32 @@ import time</code></pre>
 
 	# close cursor
 	cur.close()</code></pre>
-							<p>I opted to take the first 10 pages only, which would give us 420 results.</p>
-							<pre><code>for i in range(1,11):
+          <p>
+            I opted to take the first 10 pages only, which would give us 420
+            results.
+          </p>
+          <pre><code>for i in range(1,11):
 	url = "https://www.adoptapet.com/pet-search?clan_id=2&geo_range=50&location=93611&page={}".format(i)
 	scrape_page(url)
 
 # close connection
 con.close()</code></pre>
-							<p>Here is our database with the updated cat name and URL Our next Python script will scrape the remaining details.</p>
-							<img src="images/p_cats/db_first_scape.PNG"/>
-							<b><p>scrape2.py</p></b>
-							<p>Lets select all of the current data from the database.</p>
-							<pre><code>cur.execute("SELECT id, name, url FROM cats")
+          <p>
+            Here is our database with the updated cat name and URL Our next
+            Python script will scrape the remaining details.
+          </p>
+          <img src="images/p_cats/db_first_scape.PNG" />
+          <b><p>scrape2.py</p></b>
+          <p>Lets select all of the current data from the database.</p>
+          <pre><code>cur.execute("SELECT id, name, url FROM cats")
 
 rows = cur.fetchall()</code></pre>
-							<p>Our second function is similar to the previous script, it will find the remaining elements by xpath location and update the corresponding row in our database.</p>
-							<pre><code>def scrape_db(url):
+          <p>
+            Our second function is similar to the previous script, it will find
+            the remaining elements by xpath location and update the
+            corresponding row in our database.
+          </p>
+          <pre><code>def scrape_db(url):
 	driver = webdriver.Chrome()
 	driver.get(url)
 
@@ -155,22 +208,28 @@ rows = cur.fetchall()</code></pre>
 			continue
 
 	con.commit()</code></pre>
-							<p>As this will take some time, I included a print function to display the current ID being scraped.</p>
-							<pre><code>for r in rows:
+          <p>
+            As this will take some time, I included a print function to display
+            the current ID being scraped.
+          </p>
+          <pre><code>for r in rows:
 	print("scraping ID:", r[0])
 	scrape_db(r[2])</code></pre>
-							<p>Our finished database! Some entries are null due to broken webpages, we'll fix this later in Jupyter Notebook using Pandas.</p>
-							<img src="images/p_cats/db_second_scrape.PNG"/>
+          <p>
+            Our finished database! Some entries are null due to broken webpages,
+            we'll fix this later in Jupyter Notebook using Pandas.
+          </p>
+          <img src="images/p_cats/db_second_scrape.PNG" />
 
-							<h2>Data Analysis</h2>
-							<p>Moving onto Jupyter Notebook, let's import our libraries.</p>
-							<pre><code>import pandas as pd
+          <h2>Data Analysis</h2>
+          <p>Moving onto Jupyter Notebook, let's import our libraries.</p>
+          <pre><code>import pandas as pd
 import psycopg2
 import sqlalchemy
 import matplotlib.pyplot as plt
 import numpy as np</code></pre>
-							<p>And then connect to our PostgreSQL database</p>
-							<pre><code>from sqlalchemy import create_engine
+          <p>And then connect to our PostgreSQL database</p>
+          <pre><code>from sqlalchemy import create_engine
 
 # Postgres username, password, and database name
 POSTGRES_ADDRESS = "localhost"
@@ -187,78 +246,140 @@ postgres_str = ("postgresql://{username}:{password}@{ipaddress}:{port}/{dbname}"
 											dbname=POSTGRES_DBNAME))
 # Create the connection
 cnx = create_engine(postgres_str)</code></pre>
-							<p>We want to select all of our SQL data again, and add it to a Pandas dataframe.</p>
-							<pre><code>df = pd.read_sql_query("""SELECT * FROM cats WHERE breed IS NOT NULL LIMIT 420;""", cnx)</code></pre>
-							<p>Lets have a look at the distinct column values in our new dataframe.</p>
-							<pre><code>df.nunique()</code></pre>
-							<img src="images/p_cats/df_1.PNG"/>
-							<p>This is mostly okay, but I think we can clean up the data in our Age column and bring it down to two variables instead.</p>
-							<pre><code>df.age.value_counts()</code></pre>
-							<img src="images/p_cats/df_2.PNG"/>
-							<p>Firstly, replace all empty strings in our dataframe with NaN values. This will help with matplotlib coming up shortly. </p>
-							<pre><code>df = df.replace("", np.nan)</code></pre>
-							<p>Finally, replace the remainder Age strings into either "Young" or "Adult" variables</p>
-							<pre><code>df.age = df.age.replace("1 year old, Kitten","Young")
+          <p>
+            We want to select all of our SQL data again, and add it to a Pandas
+            dataframe.
+          </p>
+          <pre><code>df = pd.read_sql_query("""SELECT * FROM cats WHERE breed IS NOT NULL LIMIT 420;""", cnx)</code></pre>
+          <p>
+            Lets have a look at the distinct column values in our new dataframe.
+          </p>
+          <pre><code>df.nunique()</code></pre>
+          <img src="images/p_cats/df_1.PNG" />
+          <p>
+            This is mostly okay, but I think we can clean up the data in our Age
+            column and bring it down to two variables instead.
+          </p>
+          <pre><code>df.age.value_counts()</code></pre>
+          <img src="images/p_cats/df_2.PNG" />
+          <p>
+            Firstly, replace all empty strings in our dataframe with NaN values.
+            This will help with matplotlib coming up shortly.
+          </p>
+          <pre><code>df = df.replace("", np.nan)</code></pre>
+          <p>
+            Finally, replace the remainder Age strings into either "Young" or
+            "Adult" variables
+          </p>
+          <pre><code>df.age = df.age.replace("1 year old, Kitten","Young")
 df.age = df.age.replace("Kitten","Young")
 df.age = df.age.replace("10 years old, Senior", "Adult")
 df.age = df.age.replace("Senior", "Adult")</code></pre>
-							<p>Looking much better now.</p>
-							<pre><code>df.age.value_counts()</code></pre>
-							<img src="images/p_cats/df_3.PNG"/>
-							<p>So what kind of cat breeds were we able to scrape? Lets plot the top 10 distinct breeds.</p>
-							<pre><code>fig1 = df.breed.value_counts()[:10].plot(kind="barh", figsize=(10,10))</code></pre>
-							<img src="images/p_cats/pd_fig_1.png"/>
-							<p>The results were dominated by the Domestic cat, of various hair size. Lets make a new dataframe to check breeds by gender too.</p>
-							<pre><code>df2 = df.groupby(["breed", "sex"])["breed"].count().unstack("sex").fillna(0)</code></pre>
-							<p>We will also need to append a "Total" column to the new dataframe so we can sort and filter it.</p>
-							<pre><code>df2["Total"] = df2.sum(axis=1)</code></pre>
-							<img src="images/p_cats/df_4.PNG"/>
-							<p>Lets keep the top 10 breeds by the combined Male and Female values.</p>
-							<pre><code>df2 = df2.nlargest(10, "Total")</code></pre>
-							<p>We can also display this as a stached chart for better visual representation.</p>
-							<pre><code>fig2 = df2[["Female","Male"]].plot(kind="barh", stacked="True", figsize=(10,10))</code></pre>
-							<img src="images/p_cats/pd_fig_2.png"/>
-							<p>We have a nice stacked chart now, but why are there no male Calico cats available for adoption?</p>
-							<img src="images/p_cats/calico.PNG"/>
-							<p>Cool, we learned a new cat fact today.</p>
-							<p>Instead of looking at gender, we can instead try the same breed analysis with color and hair type.</p>
-							<pre><code>df3 = df.groupby(['breed', 'color', "hair"])['breed'].count().unstack('color').fillna(0)</code></pre>
-							<img src="images/p_cats/df_5.PNG"/>
-							<p>We can plot this to a stacked chart as well.</p>
-							<pre><code>fig2 = df3.plot(kind="barh", stacked="True", figsize=(20,20))</code></pre>
-							<img src="images/p_cats/pd_fig_3.png"/>
-							<p>You can download the full code on my <a href="https://github.com/stephenrutherford/Cats-for-Adoption-Web-Scraping-and-Analysis">GitHub</a> page, and also check out the <a href="https://github.com/stephenrutherford/Cats-for-Adoption-Web-Scraping-and-Analysis/blob/master/anaylsis.ipynb"> Jupyter Notebook.</a></p>
-						</div>
-					</div>
+          <p>Looking much better now.</p>
+          <pre><code>df.age.value_counts()</code></pre>
+          <img src="images/p_cats/df_3.PNG" />
+          <p>
+            So what kind of cat breeds were we able to scrape? Lets plot the top
+            10 distinct breeds.
+          </p>
+          <pre><code>fig1 = df.breed.value_counts()[:10].plot(kind="barh", figsize=(10,10))</code></pre>
+          <img src="images/p_cats/pd_fig_1.png" />
+          <p>
+            The results were dominated by the Domestic cat, of various hair
+            size. Lets make a new dataframe to check breeds by gender too.
+          </p>
+          <pre><code>df2 = df.groupby(["breed", "sex"])["breed"].count().unstack("sex").fillna(0)</code></pre>
+          <p>
+            We will also need to append a "Total" column to the new dataframe so
+            we can sort and filter it.
+          </p>
+          <pre><code>df2["Total"] = df2.sum(axis=1)</code></pre>
+          <img src="images/p_cats/df_4.PNG" />
+          <p>
+            Lets keep the top 10 breeds by the combined Male and Female values.
+          </p>
+          <pre><code>df2 = df2.nlargest(10, "Total")</code></pre>
+          <p>
+            We can also display this as a stached chart for better visual
+            representation.
+          </p>
+          <pre><code>fig2 = df2[["Female","Male"]].plot(kind="barh", stacked="True", figsize=(10,10))</code></pre>
+          <img src="images/p_cats/pd_fig_2.png" />
+          <p>
+            We have a nice stacked chart now, but why are there no male Calico
+            cats available for adoption?
+          </p>
+          <img src="images/p_cats/calico.PNG" />
+          <p>Cool, we learned a new cat fact today.</p>
+          <p>
+            Instead of looking at gender, we can instead try the same breed
+            analysis with color and hair type.
+          </p>
+          <pre><code>df3 = df.groupby(['breed', 'color', "hair"])['breed'].count().unstack('color').fillna(0)</code></pre>
+          <img src="images/p_cats/df_5.PNG" />
+          <p>We can plot this to a stacked chart as well.</p>
+          <pre><code>fig2 = df3.plot(kind="barh", stacked="True", figsize=(20,20))</code></pre>
+          <img src="images/p_cats/pd_fig_3.png" />
+          <p>
+            You can download the full code on my
+            <a
+              href="https://github.com/stephenrutherford/Cats-for-Adoption-Web-Scraping-and-Analysis"
+              >GitHub</a
+            >
+            page, and also check out the
+            <a
+              href="https://github.com/stephenrutherford/Cats-for-Adoption-Web-Scraping-and-Analysis/blob/master/anaylsis.ipynb"
+            >
+              Jupyter Notebook.</a
+            >
+          </p>
+        </div>
+      </div>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<div class="inner">
-							<section>
-								<h2>Get in touch</h2>
-								<ul class="icons">
-									<li><a href="mailto:stephen@rutherford.dev" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
-									<li><a href="https://www.linkedin.com/in/stephen-rutherford-b420951a3" class="icon brands style2 fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-									<li><a href="https://github.com/stephenrutherford" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
-									<!-- <li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
+      <!-- Footer -->
+      <footer id="footer">
+        <div class="inner">
+          <section>
+            <h2>Get in touch</h2>
+            <ul class="icons">
+              <li>
+                <a
+                  href="mailto:stephen@rutherford.dev"
+                  class="icon solid style2 fa-envelope"
+                  ><span class="label">Email</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/stephen-rutherford-b420951a3"
+                  class="icon brands style2 fa-linkedin-in"
+                  ><span class="label">LinkedIn</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/stephenrutherford"
+                  class="icon brands style2 fa-github"
+                  ><span class="label">GitHub</span></a
+                >
+              </li>
+              <!-- <li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
 									<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
 									<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
 									<li><a href="#" class="icon brands style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
 									<li><a href="#" class="icon brands style2 fa-500px"><span class="label">500px</span></a></li>
 									<li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li> -->
-								</ul>
-							</section>
-						</div>
-					</footer>
+            </ul>
+          </section>
+        </div>
+      </footer>
+    </div>
 
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+  <head>
+    <title>Domain Checker</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="assets/css/word_anim.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <!-- <link rel="stylesheet" href="assets/css/gists.css" /> -->
+    <link rel="stylesheet" href="assets/css/monokai.css" />
+    <noscript
+      ><link rel="stylesheet" href="assets/css/noscript.css"
+    /></noscript>
+  </head>
+  <body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
+      <!-- Header -->
+      <header id="header">
+        <div class="inner">
+          <!-- Logo -->
+          <a href="index.html" class="logo">
+            <span class="symbol"><img src="images/boba_t.png" alt="" /></span
+            ><span class="title">Stephen Rutherford</span>
+          </a>
+
+          <!-- Nav -->
+          <nav>
+            <ul>
+              <li><a href="#menu">Menu</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <!-- Menu -->
+      <nav id="menu">
+        <h2>Menu</h2>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="p_domain.html">App: Fraud Domain Checker</a></li>
+			<li><a href="p_cats.html">Analysis: Web Scraping with Python</a></li>
+          <li><a href="generic.html">Project 3</a></li>
+          <li><a href="generic.html">Project 4</a></li>
+          <li><a href="generic.html">Project 5</a></li>
+          <li><a href="generic.html">Project 6</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Main -->
+      <div id="main">
+        <div class="inner">
+          <h1>Domain Checker</h1>
+          <span class="image main"
+            ><img src="images/p_domain/banner2.png" alt=""
+          /></span>
+          <a href="https://github.com/stephenrutherford/domain-checker"
+            ><p>
+              <span class="image left"
+                ><img src="images/github.png" alt="" /></span
+              >GitHub
+            </p></a
+          >
+          <a href="https://fps-domain-checker.herokuapp.com/"
+            ><p>
+              <span class="image left"
+                ><img src="images/internet.png" alt="" /></span
+              >Live Demo
+            </p></a
+          >
+
+          <h2>Overview</h2>
+          <p>
+            A fraud analysis tool used to check for invalid and disposable email
+            domains.
+          </p>
+
+          <h2>Features</h2>
+          <p>
+            The app was built in Django using Python where it will perform a
+            web-scrape from the website check-mail.org. The user can paste in
+            the domains that they want to check, and the App will render a results table with two
+			specific columns that contain data of interest.
+			<ul>
+				<li>Disposable - If the domain is considered disposable.</li>
+				<li>Valid - If the domain is able to receive email, or is high risk.</li>
+			</ul>
+		  </p>
+		  
+		<p>A export button was also included for larger querues. The user may want to download the entire results table as a CSV file for filtering and spreadsheet lookups. 
+		</p>
+          <h2>Code</h2>
+          <script src="https://gist.github.com/stephenrutherford/3b6c338918224f4eb1718edd36163bef.js"></script>
+
+		  <h2>Video Demo </h2>
+
+		  <video width="1024" height="542" autoplay>
+			<source src="images/p_domain/demo.mp4" type="video/mp4">
+		  Your browser does not support the video tag.
+		  </video>
+
+          <p>
+			You can download the full code on my <a href="https://github.com/stephenrutherford/domain-checker">GitHub page</a>
+			, and also check out the <a href="https://fps-domain-checker.herokuapp.com/"> Live Demo </a>.
+          </p>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer id="footer">
+        <div class="inner">
+          <section>
+            <h2>Get in touch</h2>
+            <ul class="icons">
+              <li>
+                <a
+                  href="mailto:stephen@rutherford.dev"
+                  class="icon solid style2 fa-envelope"
+                  ><span class="label">Email</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/stephen-rutherford-b420951a3"
+                  class="icon brands style2 fa-linkedin-in"
+                  ><span class="label">LinkedIn</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/stephenrutherford"
+                  class="icon brands style2 fa-github"
+                  ><span class="label">GitHub</span></a
+                >
+              </li>
+              <!-- <li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-500px"><span class="label">500px</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li> -->
+            </ul>
+          </section>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
